@@ -29,45 +29,43 @@ class Button extends Sprite
 
 	private function createButton() 
 	{
-		var btn:Sprite = new Sprite();
-		btn.graphics.beginFill(buttonColor, 0.5);
-		btn.graphics.lineStyle(2, 0xFF0000, 1);
-		btn.graphics.drawRoundRect(0, 0, 100, 40, 20, 20);
-		btn.addEventListener(MouseEvent.CLICK, btn_Click);
-		btn.addEventListener(MouseEvent.MOUSE_MOVE, btn_MouseMove);
-		btn.addEventListener(MouseEvent.MOUSE_OUT, btn_MouseOut);
-		btn.addEventListener(MouseEvent.MOUSE_OVER, btn_MouseOver);
-		addChild(btn);
+		this.graphics.beginFill(buttonColor, 1);
+		this.graphics.lineStyle(2, 0xFF0000, 1);
+		this.graphics.drawRoundRect(0, 0, 100, 40, 20, 20);
+		this.addEventListener(MouseEvent.CLICK, onClick);
+		this.addEventListener(MouseEvent.MOUSE_MOVE, onMouseMove);
+		this.addEventListener(MouseEvent.MOUSE_OUT, onMouseOut);
+		this.addEventListener(MouseEvent.MOUSE_OVER, onMouseOver);
 	}
 
 	private function setButtonColor(newColor:Int)
 	{
 		buttonColor = newColor;
-		this.graphics.beginFill(newColor);
+		this.graphics.beginFill(newColor, 1);
 		this.graphics.drawRoundRect(0, 0, 100, 40, 20, 20);
 	}
 	
 	
 	// event handlers
 	
-	private function btn_Click(event:MouseEvent):Void
+	private function onClick(event:MouseEvent):Void
 	{
 		trace("btn_Click");		
 	}
 	
-	private function btn_MouseMove(event:MouseEvent):Void
+	private function onMouseMove(event:MouseEvent):Void
 	{
 		var coords:String = "(" + this.mouseX + "," + this.mouseY + ")";
 		trace(coords);
 	}
 	
-	private function btn_MouseOut(event:MouseEvent):Void
+	private function onMouseOut(event:MouseEvent):Void
 	{
 		setButtonColor(0xFF9900);
 		trace("btn_MouseOut");
 	}
 
-	private function btn_MouseOver(event:MouseEvent):Void
+	private function onMouseOver(event:MouseEvent):Void
 	{
 		setButtonColor(0xFFFF00);
 		trace("btn_MouseOver");
