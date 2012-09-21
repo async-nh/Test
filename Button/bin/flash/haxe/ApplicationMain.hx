@@ -92,6 +92,11 @@ class ApplicationMain {
 	public static function getAsset (inName:String):Dynamic {
 		
 		
+		if (inName=="assets/nme.svg")
+			 
+			 return Assets.getText ("assets/nme.svg");
+         
+		
 		
 		return null;
 		
@@ -112,4 +117,5 @@ class ApplicationMain {
 }
 
 
+class NME_assets_nme_svg extends nme.utils.ByteArray { }
 

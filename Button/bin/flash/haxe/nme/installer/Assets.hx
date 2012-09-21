@@ -28,6 +28,8 @@ class Assets {
 		
 		if (!initialized) {
 			
+			resourceClasses.set ("assets/nme.svg", NME_assets_nme_svg);
+			resourceTypes.set ("assets/nme.svg", "text");
 			
 			initialized = true;
 			
