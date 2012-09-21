@@ -19,15 +19,10 @@ class Button extends Sprite
 	{
 		super();
 		
-		construct();
-	}
-
-	private function construct ():Void 
-	{
 		createButton();
 	}
 
-	private function createButton() 
+	private function createButton():Void
 	{
 		this.graphics.beginFill(buttonColor, 1);
 		this.graphics.lineStyle(2, 0xFF0000, 1);
@@ -50,7 +45,7 @@ class Button extends Sprite
 	
 	private function onClick(event:MouseEvent):Void
 	{
-		trace("btn_Click");		
+		trace("onClick");		
 	}
 	
 	private function onMouseMove(event:MouseEvent):Void
@@ -62,13 +57,13 @@ class Button extends Sprite
 	private function onMouseOut(event:MouseEvent):Void
 	{
 		setButtonColor(0xFF9900);
-		trace("btn_MouseOut");
+		trace("onMouseOut");
 	}
 
 	private function onMouseOver(event:MouseEvent):Void
 	{
 		setButtonColor(0xFFFF00);
-		trace("btn_MouseOver");
+		trace("onMouseOver");
 	}
 	
 	
